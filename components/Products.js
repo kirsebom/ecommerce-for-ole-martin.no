@@ -15,7 +15,7 @@ const Products = ({ product }) => {
 				</div>
 			</Link>
 			<h2>{title}</h2>
-			<h3>{price}</h3>
+			<h3>${price}</h3>
 		</ProductStyles>
 	);
 };

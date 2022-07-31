@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Product from "../components/Products";
-import { Gallery } from "../styles/Gallery";
+import { Gallery, Spinner, SpinnerContainer } from "../styles/Gallery";
 
 export default function Home() {
 	//Fetch products from strapi
@@ -11,7 +11,11 @@ export default function Home() {
 
 	//Check for the data coming in
 	if (fetching) {
-		return <p>Loading...</p>;
+		return (
+			<SpinnerContainer>
+				<Spinner></Spinner>
+			</SpinnerContainer>
+		);
 	}
 	if (error) {
 		return <p>Oh no...{error.message}</p>;
